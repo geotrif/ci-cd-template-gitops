@@ -14,7 +14,7 @@ spec:
   source:
     repoURL: https://github.com/geotrif/ci-cd-template-gitops.git
     targetRevision: master
-    path: charts/my-app
+    path: main/charts/my-app
     helm:
       valueFiles: [values.yaml]
   destination:
