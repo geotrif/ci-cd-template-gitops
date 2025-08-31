@@ -21,8 +21,10 @@ spec:
           ports:
             - containerPort: {{ .Values.service.targetPort }}
           readinessProbe:
-            httpGet: { path: /actuator/health, port: {{ .Values.service.targetPort }} }
-            initialDelaySeconds: 10
+            httpGet: { path: /q/health/ready, port: { { .Values.service.targetPort } } }
+            initialDelaySeconds: 5
+            periodSeconds: 5
           livenessProbe:
-            httpGet: { path: /actuator/health, port: {{ .Values.service.targetPort }} }
-            initialDelaySeconds: 30
+            httpGet: { path: /q/health/live, port: { { .Values.service.targetPort } } }
+            initialDelaySeconds: 15
+            periodSeconds: 10
