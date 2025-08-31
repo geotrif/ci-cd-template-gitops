@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: ghcr.io/geotrif/ci-cd-template
-  tag: "sha-6f3fda8"        # default; overridden by Image Updater OR manually
+  tag: "sha-6bc6777"        # default; overridden by Image Updater OR manually
   pullPolicy: IfNotPresent
 
 service:
